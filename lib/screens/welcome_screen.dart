@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gomodiarect/screens/login_screen.dart';
+import 'package:gomodiarect/screens/signup_screen.dart';
+import 'package:gomodiarect/widgets/navbar_roots.dart';
 
 class WelcomeScreen extends StatelessWidget{
   @override
@@ -16,12 +18,14 @@ class WelcomeScreen extends StatelessWidget{
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                 // Navigator.push(context, MaterialPageRoute());
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => NavBarRoots()
+                  ));
                 },
                 child: Text(
                   "SKIP",
                   style: TextStyle(
-                    color: Color(0xFF7165D),
+                    color: Color(0xFF000C4B),
                     fontSize:20,
                   ),
                 ),
@@ -85,9 +89,11 @@ class WelcomeScreen extends StatelessWidget{
                     borderRadius: BorderRadius.circular(10),
                     child: InkWell(
                         onTap: (){
-                          // Navigator.push(context, MaterialPageRoute(
-                          // builder: (context) =>
-                          // ));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignUpScreen(),
+                          ));
                         },
                         child: Padding(padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                             child: Text(

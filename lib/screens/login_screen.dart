@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:gomodiarect/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget{
   @override
@@ -39,7 +40,7 @@ class LoginScreenState extends State<LoginScreen>{
                       obscureText: passToggle ? true : false,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          label: Text("Enter Username"),
+                          label: Text("Enter Password"),
                           prefixIcon: Icon(Icons.person),
                           suffixIcon: InkWell(
                             onTap: (){
@@ -107,11 +108,11 @@ class LoginScreenState extends State<LoginScreen>{
                       ),
                       TextButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => SignUpScreen(),
-                          //  ));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignUpScreen(),
+                           ));
                         },
                         child: Text(
                           "Create Account",
