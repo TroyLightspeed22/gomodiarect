@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gomodiarect/screens/home_screen.dart';
@@ -31,9 +32,11 @@ class _NavBarRootState extends State<NavBarRoots> {
       body: _screens[_selectedIndex],
       bottomNavigationBar: Container(
         height: 80,
-        child: BottomNavigationBar(
+        child: CurvedNavigationBar(
           backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
+          color: Colors.deepPurple,
+          animationDuration: Duration(milliseconds: 200),
+         /* type: BottomNavigationBarType.fixed,
           selectedItemColor: Color(0xFF7165D6),
           unselectedItemColor: Colors.black26,
           selectedLabelStyle: TextStyle (
@@ -41,28 +44,29 @@ class _NavBarRootState extends State<NavBarRoots> {
             fontSize: 18,
           ), //TextStyle
           currentIndex: _selectedIndex,
+          */
           onTap: (index){
             setState(() {
               _selectedIndex = index;
             });
           },
           items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled),
-              label: "Home",
+            Icon(
+              Icons.home,
+              color: Colors.white,
             ),//BottomNavigationBarItem
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.camera),
-              label: "Upload",
+            Icon(
+              Icons.camera,
+              color: Colors.white,
             ),//BottomNavigationBarItem
-            BottomNavigationBarItem(
-              icon: Icon(Icons.edit_document),
-              label: "Reports",
+            Icon(
+              Icons.edit_document,
+              color: Colors.white,
             ),//BottomNavigationBarItem
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: "Settings",
-            ),//BottomNavigationBarItem
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.settings),
+            //   label: "Settings",
+            // ),//BottomNavigationBarItem
           ],
         ),//BottomNavigationBarItem
       ),

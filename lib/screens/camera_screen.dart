@@ -42,16 +42,75 @@ class _imagePickerAppState extends State<ImagePickerApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: Text('Upload your retina'),
-      ),
+      ),*/
       body: Center(
         child: Column(
           children: [
+            SizedBox(height: 100,),
+            _image!=null ? Image.file(_image!, width: 250, height: 250, fit: BoxFit.cover,) : Image.asset("images/eyes.jpg"),
             SizedBox(height: 40,),
-            _image!=null ? Image.file(_image!, width: 250, height: 250, fit: BoxFit.cover,) : Image.asset("images/eye.jpg"),
-            SizedBox(height: 40,),
-            CustomButton(
+          SizedBox(height: 130),
+          Padding(
+              padding: const EdgeInsets.all(10),
+              child: SizedBox(
+                width: double.infinity,
+                child: Material(
+                    color: Color(0xFF7165D6),
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: () => getImage(ImageSource.gallery),
+
+                      child: Padding(
+                          padding:
+                          EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                          child: Center(
+                            child: Text(
+                              "Pick from Gallery",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          )
+                      ),
+
+                    )
+                ),
+              ),
+          ),
+              SizedBox(height: 0,),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Material(
+                      color: Color(0xFF7165D6),
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+                        onTap: () => getImage(ImageSource.camera),
+
+                        child: Padding(
+                            padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                            child: Center(
+                              child: Text(
+                                "Pick from Camera",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                        ),
+
+                      )
+                  ),
+                ),
+            /*CustomButton(
                 title: 'Pick from Gallery',
             icon: Icons.image_outlined,
             onClick: () => getImage(ImageSource.gallery),
@@ -61,8 +120,8 @@ class _imagePickerAppState extends State<ImagePickerApp> {
                 icon: Icons.camera,
                 onClick: () => getImage(ImageSource.camera),
             ),
-
-          ]
+          */
+          )]
         )
       )
     );
