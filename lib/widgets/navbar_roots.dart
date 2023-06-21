@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gomodiarect/screens/home_screen.dart';
 
+import '../screens/camera_screen.dart';
+
 class NavBarRoots extends StatefulWidget {
   @override
   State<NavBarRoots> createState() => _NavBarRootState();
@@ -14,7 +16,7 @@ class _NavBarRootState extends State<NavBarRoots> {
     // Home Screen
     HomeScreen(),
     // Messages Screen
-    Container(),
+    ImagePickerApp(),
     // Schedule Screen
     Container(),
     //Settings Screen
