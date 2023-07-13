@@ -1,9 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:gomodiarect/screens/home_screen.dart';
+import 'package:gomodiarect/screens/profile_page.dart';
 
 import '../screens/camera_screen.dart';
+import '../screens/reports_screen.dart';
 
 class NavBarRoots extends StatefulWidget {
   @override
@@ -15,13 +16,13 @@ class _NavBarRootState extends State<NavBarRoots> {
   int _selectedIndex = 0;
   final _screens =[
     // Home Screen
-    HomeScreen(),
+    AppointmentScreen(),
     // Messages Screen
     ImagePickerApp(),
     // Schedule Screen
-    Container(),
+    Reports(),
     //Settings Screen
-    Container(),
+    //Container(),
 
   ];
 
